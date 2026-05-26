@@ -1,5 +1,4 @@
 """
-按照最新 3_benchmark_of_dataset.tex 方法计算分数：
 - L_SCA = α01·p01 + α11·p11 + α10·p10 + α00·p00  (scale-adaptive α)
 - S1a = 0.5·R_con + 0.3·(1-0.5·R_mcq) + 0.2·P_reuse
 - S1b = σ(L_SCA) + ε_div
@@ -8,7 +7,6 @@
 - S2 = λ·ΔMean@4_norm + (1-λ)·L_SCA  (L_SCA raw, clamped)
 - S3 = λ·ΔPass@4_norm + (1-λ)·L_SCA  (L_SCA raw, clamped)
 - Q  = w1·S1 + w2·S2 + w3·S3
-计算 Pearson/Spearman 相关性，输出 LaTeX 表格
 """
 import math, json
 
@@ -184,6 +182,6 @@ for M_name, scores in [("1.7B", scores_1b), ("8B", scores_8b)]:
 # ── Save JSON ─────────────────────────────────────────────────────────────────
 out = {"1.7B": {ds: {k: round(v,4) for k,v in sc.items()} for ds,sc in scores_1b.items()},
        "8B":   {ds: {k: round(v,4) for k,v in sc.items()} for ds,sc in scores_8b.items()}}
-with open("/Users/celine/WorkBuddy/2026-05-08-task-1/scores_final.json","w") as f:
+with open("./scores_final.json","w") as f:
     json.dump(out, f, indent=2)
 print("\nSaved scores_final.json")

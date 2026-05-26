@@ -1,6 +1,3 @@
-"""
-深入分析各数据集的learnability分布差异，找出与GT排名最相关的特征组合。
-"""
 import ijson, collections, math, itertools
 
 DATASET_HF_IDS = {
@@ -34,7 +31,7 @@ stats = {ds: {
 } for ds in DATASET_HF_IDS}
 
 count = 0
-with open("/Users/celine/Downloads/stage4_final.json", "rb") as f:
+with open("./stage4_final.json", "rb") as f:
     parser = ijson.kvitems(f, "")
     for key, item in parser:
         count += 1
