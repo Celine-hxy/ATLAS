@@ -26,7 +26,7 @@ class AMOBenchProcessor(DatasetProcessor):
             "source_field": None,
             "print_max_len": 5000,
             "skip_parquet": False,  # 是否跳过保存parquet文件
-            "sqlite_output_root": "$HOME/DataLineageDB/test/math",  # SQLite输出根目录
+            "sqlite_output_root": "$HOME/ATLASDB/test/math",  # SQLite输出根目录
             "parquet_output_root": "$HOME/ATLAS/test/math",
         }
     

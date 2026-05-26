@@ -12,9 +12,9 @@ from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser(description="SQLite to JSONL (verl eval format)")
-    parser.add_argument("sqlite_path", type=str, nargs="?", default="$ROOT/DataLineageDB/test/math/hle_math_exact_match_no_image_int_answer_random128/test.sqlite")
+    parser.add_argument("sqlite_path", type=str, nargs="?", default="$ROOT/ATLASDB/test/math/hle_math_exact_match_no_image_int_answer_random128/test.sqlite")
     parser.add_argument("-o", "--output", type=str, default="$ROOT/verl/recipe/eval/data/hle_math/test.jsonl")
-    # parser.add_argument("sqlite_path", type=str, nargs="?", default="$ROOT/DataLineageDB/test/math/AMO-Bench/test.sqlite")
+    # parser.add_argument("sqlite_path", type=str, nargs="?", default="$ROOT/ATLASDB/test/math/AMO-Bench/test.sqlite")
     # parser.add_argument("-o", "--output", type=str, default="$ROOT/verl/recipe/eval/data/amo_bench/test.jsonl", help="Output JSONL path (default: <sqlite_stem>.jsonl beside sqlite)")
     parser.add_argument("-t", "--table", type=str, default="data", help="Table name")
     args = parser.parse_args()
